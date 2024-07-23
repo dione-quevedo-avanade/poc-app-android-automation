@@ -14,7 +14,8 @@ ${INCORRECT_PASSWORD}       40203040
 
 *** Test Cases ***
 
-Valid Login
+Validate Success Login
+    [Tags]                 LOGINS
     [Documentation]        This test validates a valid login successfully.
 
     Access hamburger menu
@@ -23,6 +24,7 @@ Valid Login
     Validate Home
 
 Validate Wrong Login
+    [Tags]                 LOGINS
     [Documentation]        This test validates a invalid login
 
     Access hamburger menu

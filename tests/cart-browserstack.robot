@@ -9,7 +9,8 @@ Test Teardown               Finish session
 *** Test Cases ***
 
 Being able to access the empty cart
-    [Documentation]    This test validates access to the empty cart
+    [Tags]                 CART
+    [Documentation]        This test validates access to the empty cart
 
     Click on cart
     Validate empty cart

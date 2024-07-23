@@ -22,31 +22,31 @@ ${ANDROID_NEW_COMMAND_TIMEOUT}  3600
 *** Keywords ***
 
 Start session
-    [Tags]      SessionStart
+    [Documentation]         Start the application
 
     ${options}    Create Dictionary
-    ...         projectName=First Robot Local project
-    ...         buildName=browserstack-build-1
-    ...         sessionName=BStack local_test
-    ...         local=true
+    ...                     projectName=First Robot Local project
+    ...                     buildName=browserstack-build-1
+    ...                     sessionName=BStack local_test
+    ...                     local=true
 
-	Open Application    
-    ...         ${REMOTE_URL}    
-    ...         platformName=${PLATFORM_NAME}    
-    ...         platformVersion=${PLATFORM_VERSION}    
-    ...         deviceName=${DEVICE_NAME}   
-    ...         autoGrantPermissions=true
-    ...         app=${APP}
-    ...         bstack:options=${options}
+    Open Application    
+    ...                     ${REMOTE_URL}    
+    ...                     platformName=${PLATFORM_NAME}    
+    ...                     platformVersion=${PLATFORM_VERSION}    
+    ...                     deviceName=${DEVICE_NAME}   
+    ...                     autoGrantPermissions=true
+    ...                     app=${APP}
+    ...                     bstack:options=${options}
 
 Finish session
-    [Tags]      SessionClose
+    [Documentation]         Close the application
 
     Capture Page Screenshot
 	Close Application
 
 Access hamburger menu
     
-    ${HAMBURGER_MENU}    Set Variable    //*[@content-desc="open menu"]
+    ${HAMBURGER_MENU}       Set Variable    //*[@content-desc="open menu"]
 
-    Click Element        ${HAMBURGER_MENU}
+    Click Element           ${HAMBURGER_MENU}

@@ -20,26 +20,27 @@ ${ANDROID_NEW_COMMAND_TIMEOUT}  3600
 *** Keywords ***
 
 Start session
-    [Tags]      SessionStart
+    [Documentation]         Start the application
 
 	Open Application    
-    ...         ${REMOTE_URL}    
-    ...         platformName=${PLATFORM_NAME}    
-    ...         platformVersion=${PLATFORM_VERSION}    
-    ...         deviceName=${DEVICE_NAME}   
-    ...         autoGrantPermissions=true
-    ...         newCommandTimeout=${ANDROID_NEW_COMMAND_TIMEOUT}
-    ...         app=${APP}
-    ...         automationName=${AUTOMATION_NAME}
+    ...                     ${REMOTE_URL}    
+    ...                     platformName=${PLATFORM_NAME}    
+    ...                     platformVersion=${PLATFORM_VERSION}    
+    ...                     deviceName=${DEVICE_NAME}   
+    ...                     autoGrantPermissions=true
+    ...                     newCommandTimeout=${ANDROID_NEW_COMMAND_TIMEOUT}
+    ...                     app=${APP}
+    ...                     automationName=${AUTOMATION_NAME}
 
 Finish session
-    [Tags]      SessionClose
+    [Documentation]         Close the application
 
     Capture Page Screenshot
 	Close Application
 
 Access hamburger menu
+    [Documentation]         Access the hamburger menu
     
-    ${HAMBURGER_MENU}    Set Variable    //*[@content-desc="open menu"]
+    ${HAMBURGER_MENU}       Set Variable    //*[@content-desc="open menu"]
 
-    Click Element        ${HAMBURGER_MENU}
+    Click Element           ${HAMBURGER_MENU}
